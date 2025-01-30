@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://20.244.37.114:5000/api';
+const API_URL = 'https://20.244.37.114:5000/api';
 
 export const uploadFile = async (formData, token) => {
   const response = await axios.post(`${API_URL}/files/upload`, formData, {
