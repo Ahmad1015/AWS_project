@@ -34,7 +34,7 @@ const FileList = () => {
             }
 
             const response = await axios.get(
-                `http://localhost:5000/api/file/list?page=${page}&email=${userEmail}`
+                `http://20.244.37.114:5000/api/file/list?page=${page}&email=${userEmail}`
             );
 
             const uniqueFiles = Array.from(
@@ -127,7 +127,7 @@ const FileList = () => {
             }
 
             const response = await fetch(
-                `http://localhost:5000/api/s3/get-url?email=${encodeURIComponent(
+                `http://20.244.37.114:5000/api/s3/get-url?email=${encodeURIComponent(
                     email
                 )}&fileName=${encodeURIComponent(fileName)}&expiresIn=${expirationInSeconds}`
             );
@@ -170,7 +170,7 @@ const FileList = () => {
             if (!confirmed) return;
 
             const response = await axios.delete(
-                'http://localhost:5000/api/s3/delete-file',
+                'http://20.244.37.114:5000/api/s3/delete-file',
                 {
                     params: {
                         email,
@@ -178,7 +178,7 @@ const FileList = () => {
                     },
                 }
             );
-            const dbResponse = await fetch(`http://localhost:5000/api/file/delete-file-metadata`, {
+            const dbResponse = await fetch(`http://20.244.37.114:5000/api/file/delete-file-metadata`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

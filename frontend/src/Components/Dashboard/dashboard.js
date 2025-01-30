@@ -22,8 +22,8 @@ const Dashboard = () => {
         if (!token) {
           throw new Error('No authentication token found');
         }
-
-        const response = await axios.get('http://localhost:5000/api/dashboard', {
+        
+        const response = await axios.get('http://20.244.37.114:5000/api/dashboard', {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',

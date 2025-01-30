@@ -65,7 +65,7 @@ const LoginSignup = ({ onLogin }) => {
 
     try {
       if (action === "Sign Up") {
-        await axios.post("http://localhost:5000/api/users/register", {
+        await axios.post("http://20.244.37.114:5000/api/users/register", {
           username: trimmedName,
           email: trimmedEmail,
           password: trimmedPassword,
@@ -73,7 +73,7 @@ const LoginSignup = ({ onLogin }) => {
         alert("Registration successful! You can now log in.");
         setAction("Login");
       } else {
-        const response = await axios.post("http://localhost:5000/api/users/login", {
+        const response = await axios.post("http://20.244.37.114:5000/api/users/login", {
           email: trimmedEmail,
           password: trimmedPassword,
         });
